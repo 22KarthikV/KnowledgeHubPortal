@@ -1,0 +1,32 @@
+﻿@model IEnumerable<KnowledgeHubPortal.Core.Entities.Url>
+<h2>Approve URLs</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Link</th>
+            <th>Category</th>
+            <th>Submitted By</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var url in Model)
+        {
+            <tr>
+                <td>@url.Title</td>
+                <td><a href="@url.Link" target="_blank">@url.Link</a></td>
+                <td>@(url.Category?.CategoryName ?? "N/A")</td>
+                <td>@(url.User?.Name ?? "Unknown")</td>
+                <td>
+                    <form asp-action="ApproveUrl" asp-route-id="@url.UrlId" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                    </form>
+                    <form asp-action="RejectUrl" asp-route-id="@url.UrlId" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-danger btn-sm">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

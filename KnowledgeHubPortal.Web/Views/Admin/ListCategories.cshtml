@@ -1,0 +1,37 @@
+﻿<!-- Views/Admin/ListCategories.cshtml -->
+@model IEnumerable<KnowledgeHubPortal.Core.Entities.Category>
+
+@{
+    ViewData["Title"] = "List Categories";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<p>
+    <a asp-action="CreateCategory" class="btn btn-primary">Create New Category</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+                <td>@category.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

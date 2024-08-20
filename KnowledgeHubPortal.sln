@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{17E7F459-93D4-45A8-876D-8C87E2E387F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnowledgeHubPortal.Core", "KnowledgeHubPortal.Core\KnowledgeHubPortal.Core.csproj", "{F02B8D9C-8339-49CA-980C-47D1C6928B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnowledgeHubPortal.Infrastructure", "KnowledgeHubPortal.Infrastructure\KnowledgeHubPortal.Infrastructure.csproj", "{DC4DD2BF-5A7C-4462-8758-09519E8C9556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnowledgeHubPortal.Web", "KnowledgeHubPortal.Web\KnowledgeHubPortal.Web.csproj", "{0031E8FB-39F0-4D26-B98A-336995D6381D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHasherTool", "PasswordHasherTool\PasswordHasherTool.csproj", "{5BB0575B-2081-49D8-A311-10AE2476DBCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F02B8D9C-8339-49CA-980C-47D1C6928B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F02B8D9C-8339-49CA-980C-47D1C6928B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F02B8D9C-8339-49CA-980C-47D1C6928B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F02B8D9C-8339-49CA-980C-47D1C6928B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4DD2BF-5A7C-4462-8758-09519E8C9556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4DD2BF-5A7C-4462-8758-09519E8C9556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4DD2BF-5A7C-4462-8758-09519E8C9556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4DD2BF-5A7C-4462-8758-09519E8C9556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0031E8FB-39F0-4D26-B98A-336995D6381D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0031E8FB-39F0-4D26-B98A-336995D6381D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0031E8FB-39F0-4D26-B98A-336995D6381D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0031E8FB-39F0-4D26-B98A-336995D6381D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BB0575B-2081-49D8-A311-10AE2476DBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BB0575B-2081-49D8-A311-10AE2476DBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BB0575B-2081-49D8-A311-10AE2476DBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BB0575B-2081-49D8-A311-10AE2476DBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F02B8D9C-8339-49CA-980C-47D1C6928B82} = {17E7F459-93D4-45A8-876D-8C87E2E387F9}
+		{DC4DD2BF-5A7C-4462-8758-09519E8C9556} = {17E7F459-93D4-45A8-876D-8C87E2E387F9}
+		{0031E8FB-39F0-4D26-B98A-336995D6381D} = {17E7F459-93D4-45A8-876D-8C87E2E387F9}
+		{5BB0575B-2081-49D8-A311-10AE2476DBCF} = {17E7F459-93D4-45A8-876D-8C87E2E387F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B291A14-C5AC-4F4F-A115-732439453782}
+	EndGlobalSection
+EndGlobal

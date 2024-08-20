@@ -1,0 +1,22 @@
+﻿@model IEnumerable<KnowledgeHubPortal.Core.Entities.Url>
+
+<h2>Browse Approved URLs</h2>
+
+<div class="row">
+    @foreach (var url in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@url.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@(url.Category?.CategoryName ?? "N/A")</h6>
+                    <p class="card-text">@url.Description</p>
+                    <a href="@url.Link" class="btn btn-primary" target="_blank">Visit</a>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Submitted by @(url.User?.Name ?? "Unknown") on @url.SubmittedAt.ToString("g")</small>
+                </div>
+            </div>
+        </div>
+    }
+</div>
