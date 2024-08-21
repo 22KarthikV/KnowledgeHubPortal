@@ -7,6 +7,8 @@ namespace KnowledgeHubPortal.Core.Interfaces
         IRepository<User> Users { get; }
         IRepository<Category> Categories { get; }
         IRepository<Url> Urls { get; }
+        IStatisticRepository Statistics { get; }
         int SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }

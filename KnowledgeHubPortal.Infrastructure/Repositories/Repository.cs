@@ -28,6 +28,11 @@ namespace KnowledgeHubPortal.Infrastructure.Repositories
         {
             return _dbSet.ToList();
         }
+        public IQueryable<T> GetAllAsQueryable()
+        {
+            return _dbSet.AsQueryable();
+        }
+
 
         public void Add(T entity)
         {
@@ -52,6 +57,10 @@ namespace KnowledgeHubPortal.Infrastructure.Repositories
                 query = query.Include(includeProperty);
             }
             return query;
+        }
+        public async Task<int> CountAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _dbSet.CountAsync(predicate);
         }
     }
 }

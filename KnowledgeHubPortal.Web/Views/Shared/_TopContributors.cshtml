@@ -1,0 +1,12 @@
+﻿@using KnowledgeHubPortal.Web.ViewModels
+@model List<ContributorViewModel>
+
+<ul class="list-group">
+    @foreach (var contributor in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            @contributor.Username
+            <span class="badge bg-primary rounded-pill">@contributor.ApprovedSubmissions</span>
+        </li>
+    }
+</ul>

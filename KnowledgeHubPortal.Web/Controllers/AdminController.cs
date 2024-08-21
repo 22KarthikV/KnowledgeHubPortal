@@ -4,6 +4,7 @@ using KnowledgeHubPortal.Web.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using KnowledgeHubPortal.Web.ViewModels;
 
 namespace KnowledgeHubPortal.Web.Controllers
 {

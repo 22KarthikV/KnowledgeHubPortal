@@ -1,0 +1,88 @@
+﻿<!-- KnowledgeHubPortal.Web/Views/Statistics/Index.cshtml -->
+@using KnowledgeHubPortal.Web.ViewModels
+@model KnowledgeHubPortal.Web.ViewModels.StatisticsViewModel
+
+<h2>Knowledge Hub Statistics</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>General Statistics</h3>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Top Contributor
+                <span class="badge bg-primary rounded-pill">@Model.TopContributor</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Star Contributor of the Month
+                <span class="badge bg-primary rounded-pill">@Model.StarContributor</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Most Popular Category
+                <span class="badge bg-primary rounded-pill">@Model.MostPopularCategory</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total Approved URLs
+                <span class="badge bg-primary rounded-pill">@Model.TotalApprovedUrls</span>
+            </li>
+        </ul>
+        @if (Model.LastUpdateTime.HasValue)
+        {
+            <p class="text-muted mt-2">Last updated: @Model.LastUpdateTime.Value.ToString("g")</p>
+        }
+    </div>
+    <div class="col-md-6">
+        <h3>Recent Approved URLs</h3>
+        <div class="list-group">
+            @foreach (var url in Model.RecentApprovedUrls)
+            {
+                <a href="@url.Link" class="list-group-item list-group-item-action" target="_blank">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@url.Title</h5>
+                        <small>@url.ApprovalDate.ToString("g")</small>
+                    </div>
+                    <p class="mb-1">Category: @url.CategoryName</p>
+                    <small>Submitted by: @url.SubmitterName</small>
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <h3>Submission Trends</h3>
+        <canvas id="submissionTrendsChart"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('submissionTrendsChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: @Json.Serialize(Model.SubmissionTrends.Dates),
+                datasets: [{
+                    label: 'Total Submissions',
+                    data: @Json.Serialize(Model.SubmissionTrends.TotalSubmissions),
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }, {
+                    label: 'Approved Submissions',
+                    data: @Json.Serialize(Model.SubmissionTrends.ApprovedSubmissions),
+                    borderColor: 'rgb(255, 99, 132)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

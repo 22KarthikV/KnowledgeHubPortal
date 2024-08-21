@@ -6,3 +6,32 @@
     <h1 class="display-4">Welcome to Knowledge Hub Portal</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<div class="row">
+    <div class="col-md-8">
+        <h2>Recent Approved URLs</h2>
+        <div class="list-group">
+            @foreach (var url in Model.RecentUrls)
+            {
+                <a href="@url.Link" class="list-group-item list-group-item-action" target="_blank">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@url.Title</h5>
+                        <small>@url.ApprovalDate.ToString("g")</small>
+                    </div>
+                    <p class="mb-1">Category: @url.CategoryName</p>
+                    <small>Submitted by: @url.SubmitterName</small>
+                </a>
+            }
+        </div>
+    </div>
+    <div class="col-md-4">
+        <h2>Quick Statistics</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Top Contributor: @Model.TopContributor</li>
+            <li class="list-group-item">Star Contributor of the Month: @Model.StarContributor</li>
+            <li class="list-group-item">Most Popular Category: @Model.MostPopularCategory</li>
+            <li class="list-group-item">Total Approved URLs: @Model.TotalApprovedUrls</li>
+        </ul>
+        <p class="mt-2">Last updated: @Model.LastUpdateTime.ToString("g")</p>
+        <a asp-controller="Statistics" asp-action="Index" class="btn btn-primary mt-3">View Full Statistics</a>
+    </div>
+</div>

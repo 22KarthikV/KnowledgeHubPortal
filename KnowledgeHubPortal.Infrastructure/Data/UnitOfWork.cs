@@ -11,6 +11,7 @@ namespace KnowledgeHubPortal.Infrastructure.Data
         public IRepository<User> Users { get; private set; }
         public IRepository<Category> Categories { get; private set; }
         public IRepository<Url> Urls { get; private set; }
+        public IStatisticRepository Statistics { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -18,11 +19,17 @@ namespace KnowledgeHubPortal.Infrastructure.Data
             Users = new Repository<User>(_context);
             Categories = new Repository<Category>(_context);
             Urls = new Repository<Url>(_context);
+            Statistics = new StatisticRepository(_context);
         }
 
         public int SaveChanges()
         {
             return _context.SaveChanges();
         }
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+        
     }
 }

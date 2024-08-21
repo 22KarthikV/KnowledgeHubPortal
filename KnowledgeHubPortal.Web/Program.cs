@@ -4,11 +4,14 @@ using KnowledgeHubPortal.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using KnowledgeHubPortal.Infrastructure.Services;
+using KnowledgeHubPortal.Web.Controllers;
+using KnowledgeHubPortal.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHostedService<StatisticsUpdateService>();
 //builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Get connection string from configuration
@@ -20,6 +23,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Register repositories and unit of work
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<StatisticsController>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

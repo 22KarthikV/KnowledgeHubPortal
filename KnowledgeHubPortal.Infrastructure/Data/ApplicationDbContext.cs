@@ -13,6 +13,7 @@ namespace KnowledgeHubPortal.Infrastructure.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Url> Urls { get; set; }
+        public DbSet<Statistic> Statistics { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

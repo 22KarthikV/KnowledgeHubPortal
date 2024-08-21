@@ -7,9 +7,11 @@ namespace KnowledgeHubPortal.Core.Interfaces
     {
         T GetById(int id);
         IEnumerable<T> GetAll();
+        IQueryable<T> GetAllAsQueryable();
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
         IQueryable<T> GetAllIncluding(params Expression<Func<T, object>>[] includeProperties);
+        Task<int> CountAsync(Expression<Func<T, bool>> predicate);
     }
 }

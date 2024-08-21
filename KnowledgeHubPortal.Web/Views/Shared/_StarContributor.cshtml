@@ -1,0 +1,21 @@
+﻿@model KnowledgeHubPortal.Web.ViewModels.ContributorViewModel
+
+@if (Model != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Star Contributor</h5>
+            <p class="card-text">Username: @Model.Username</p>
+            <p class="card-text">Approved Submissions: @Model.ApprovedSubmissions</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Star Contributor</h5>
+            <p class="card-text">No star contributor for this period.</p>
+        </div>
+    </div>
+}

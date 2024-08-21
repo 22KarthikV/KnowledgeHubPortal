@@ -1,15 +1,11 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-
+﻿// KnowledgeHubPortal.Web/ViewModels/CategoryViewModel.cs
 namespace KnowledgeHubPortal.Web.ViewModels
 {
     public class CategoryViewModel
     {
-        [Required]
-        [Display(Name = "Category Name")]
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-
-        [Display(Name = "Description")]
         public string Description { get; set; }
+        public int UrlCount { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+﻿@using KnowledgeHubPortal.Web.ViewModels
+@model List<RecentActivityViewModel>
+
+<ul class="list-group">
+    @foreach (var activity in Model.Take(5))
+    {
+        <li class="list-group-item">
+            <h6>@activity.Title</h6>
+            <small>Category: @activity.CategoryName | Submitted by: @activity.SubmitterName | Approved on: @activity.ApprovalDate.ToString("g")</small>
+        </li>
+    }
+</ul>
