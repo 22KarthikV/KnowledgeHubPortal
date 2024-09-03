@@ -1,21 +1,88 @@
 ﻿@{
     ViewData["Title"] = "Admin Dashboard";
-}
 
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    /* Ensure all cards are the same size */
+    .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        flex: 1;
+    }
+
+    .card-title i {
+        font-size: 24px;
+        margin-right: 10px;
+        color: #007bff; /* Match icon color with link color */
+    }
+
+    .nav-link {
+        display: block;
+        padding: 10px;
+        color: #007bff;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+        .nav-link:hover {
+            background-color: #f8f9fa;
+        }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    .card.shadow {
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #343a40; /* Dark color for the title */
+    }
+
+  
+</style>
 <h1>@ViewData["Title"]</h1>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Category Management</h2>
-        <ul>
-            <li><a asp-action="ListCategories">List Categories</a></li>
-            <li><a asp-action="CreateCategory">Create Category</a></li>
-        </ul>
-    </div>
-    <div class="col-md-4">
-        <h2>User Management</h2>
-        <ul>
-            <li><a asp-action="ListUsers">List Users</a></li>
-        </ul>
+<div class="container mt-4">
+    @* <h1 class="mb-4">@ViewData["Title"]</h1> *@
+
+    <div class="row">
+        <!-- Category Management Section -->
+       
+        <div class="col-md-6 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title"><i class="fas fa-tags"></i> Category Management</h2>
+                    <ul class="list-unstyled">
+                        <li><a class="nav-link" asp-action="ListCategories"><i class="fas fa-list"></i> List Categories</a></li>
+                        <li><a class="nav-link" asp-action="CreateCategory"><i class="fas fa-plus-circle"></i> Create Category</a></li>
+                    </ul>
+                </div>
+               
+            </div>
+        </div>
+
+        <!-- User Management Section -->
+        
+        <div class="col-md-6 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="card-title"><i class="fas fa-users"></i> User Management</h2>
+                    <ul class="list-unstyled">
+                        <li><a class="nav-link" asp-action="ListUsers"><i class="fas fa-user-check"></i> List Users</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
     </div>
 </div>

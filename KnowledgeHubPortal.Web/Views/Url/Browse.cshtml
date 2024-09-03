@@ -1,5 +1,25 @@
 ﻿@model IEnumerable<KnowledgeHubPortal.Core.Entities.Url>
 
+<style> 
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .card-body {
+        flex: 1;
+    }
+
+    .card-footer {
+        margin-top: auto;
+    }
+</style>
 <h2>Browse Approved URLs</h2>
 
 <div class="row">
