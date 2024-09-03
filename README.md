@@ -1,4 +1,5 @@
 # Knowledge Hub Portal
+[Portal -Hosted Live on Azure](https://knowledgehp.azurewebsites.net/)
 
 Knowledge Hub Portal is a web application that allows users to submit, browse, and manage URLs under specific categories. It provides a platform for sharing knowledge and resources within a community.
 
@@ -24,7 +25,7 @@ Knowledge Hub Portal is a web application that allows users to submit, browse, a
 
 ### Prerequisites
 
-- .NET 6.0 SDK or later
+- .NET 8.0
 - SQL Server
 - Visual Studio 2022 or Visual Studio Code
 
